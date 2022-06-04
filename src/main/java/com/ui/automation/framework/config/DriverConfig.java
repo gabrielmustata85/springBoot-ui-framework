@@ -175,7 +175,7 @@ public class DriverConfig {
                     if (osName.startsWith("Win")) {
                         resource = new ClassPathResource("static"+File.separator+"chromedriver"+File.separator+"chromedriver_for_win.exe");
                     } else {
-                        resource = new ClassPathResource("static"+File.separator+"chromedriver"+File.separator+"chromedriver");
+                        resource = new ClassPathResource(File.separator+"chromedriver");
                     }
                     file = resource.getFile();
                     System.setProperty("webdriver.chrome.driver",
@@ -194,7 +194,7 @@ public class DriverConfig {
                         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
                     }
                     driverObject = ThreadGuard.protect(new ChromeDriver(capabilities));
-                    log.info("Using GOOGLECHROME Driver...");
+                    log.info("Using CHROME Driver...");
                     break;
                 case HTMLUNIT:
                     if (PropConfig.get().getHtmlUnitProxy() != null) {
@@ -246,10 +246,10 @@ public class DriverConfig {
                     appiumServerUrl = getAppiumServerUrl();
                     app = getAppBin();
                     capabilities = new DesiredCapabilities();
-                    if (PropConfig.get().getDeviceName() != null && PropConfig.get().getUuid() != null & PropConfig.get().getPlatFormVersion() != null) {
+                    if (PropConfig.get().getDeviceName() != null && PropConfig.get().getUuid() != null & PropConfig.get().getPlatformVersion() != null) {
                         capabilities.setCapability("deviceName", PropConfig.get().getDeviceName());
                         capabilities.setCapability("udid", PropConfig.get().getUuid());
-                        capabilities.setCapability("platFormName", PropConfig.get().getPlatFormVersion());
+                        capabilities.setCapability("platFormName", PropConfig.get().getPlatformVersion());
                     } else {
                         IDevice device = DebugBridge.getDevice();
                         if (device != null) {
@@ -271,8 +271,8 @@ public class DriverConfig {
             }
 
         } catch (Exception x) {
-            log.error("Error in getDriverObject{}" + x.getMessage());
-            throw new Exception("Error in getDriverObject{}" + x.getMessage());
+            log.error("Error in getDriverObject{} " + x.getMessage());
+            throw new Exception("Error in getDriverObject{} " + x.getMessage());
         }
         return driverObject;
     }

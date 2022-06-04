@@ -1,6 +1,7 @@
 package com.ui.automation.framework;
 
 import com.ui.automation.framework.android.DebugBridge;
+import com.ui.automation.framework.android.event.AccessibilityEventMonitor;
 import com.ui.automation.framework.cache.DriverCache;
 import com.ui.automation.framework.cache.MethodCache;
 import com.ui.automation.framework.config.DriverConfig;
@@ -14,6 +15,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ThreadGuard;
+import org.springframework.test.context.ContextConfiguration;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
 import org.uncommons.reportng.HTMLReporter;
@@ -30,6 +32,7 @@ import static com.ui.automation.framework.Inject.AutoInjectHelper.initFields;
  */
 @Listeners({TestResultListener.class, SuiteListener.class, PowerEmailableReporter.class, HTMLReporter.class})
 @Slf4j
+@ContextConfiguration(classes = FrameworkSpringConfiguration.class)
 public abstract class TestCaseBase extends AbstractTestNGSpringContextTests {
 
     private String browser = null;
@@ -47,7 +50,7 @@ public abstract class TestCaseBase extends AbstractTestNGSpringContextTests {
         beforeSuite();
         if (PropConfig.get().getCoreType().equalsIgnoreCase("ANDROIDAPP")) {
             DebugBridge.init();
-            //AccessibilityEventMonitor.start();
+            AccessibilityEventMonitor.start();
         }
     }
 
