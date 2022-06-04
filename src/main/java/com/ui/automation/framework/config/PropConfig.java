@@ -12,27 +12,27 @@ import org.springframework.stereotype.Component;
 public class PropConfig implements InitializingBean {
 
     private static PropConfig instance;
-    //代理配置
+    //proxy config
     @Value("${localhost:127.0.0.1}")
     private String localhost;
     @Value("${localport:8888}")
     private String localport;
     @Value("${timeout:30000}")
     private String timeout = "";
-    //测试服务器配置
+    //server config
     @Value("${webPath}")
     private String webPath;
     @Value("${dbPoolName:}")
     private String dbPoolName;
-    //失败重试次数
+    //retry
     @Value("${retryCount:1}")
     private int retryCount;
-    //自定义report
+    //custom report
     @Value("${sourceCodeEncoding:UTF-8}")
     private String sourceCodeEncoding;
     @Value("${sourceCodeDir:src}")
     private String sourceCodeDir;
-    //浏览器配置
+    //browser config
     @Value("${coreType:GOOGLECHROME}")
     private String coreType;
     @Value("${htmlUnitEmulationType:}")
@@ -59,11 +59,11 @@ public class PropConfig implements InitializingBean {
     @Value("${debug:false}")
     private boolean debug;
     //ios
-    @Value("${plantfromVersion:}")
-    private String plantfromVersion;
+    @Value("${platformVersion:}")
+    private String platformVersion;
     @Value("${uuid:}")
     private String uuid;
-    //单例测试
+    //singleton test
     @Value("${noReset:false}")
     private boolean noReset;
 
@@ -220,12 +220,12 @@ public class PropConfig implements InitializingBean {
         this.debug = debug;
     }
 
-    public String getPlantfromVersion() {
-        return plantfromVersion;
+    public String getPlatFormVersion() {
+        return platformVersion;
     }
 
-    public void setPlantfromVersion(String plantfromVersion) {
-        this.plantfromVersion = plantfromVersion;
+    public void setPlatformVersion(String platformVersion) {
+        this.platformVersion = platformVersion;
     }
 
     public String getUuid() {

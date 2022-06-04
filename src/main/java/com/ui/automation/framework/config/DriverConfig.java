@@ -246,17 +246,17 @@ public class DriverConfig {
                     appiumServerUrl = getAppiumServerUrl();
                     app = getAppBin();
                     capabilities = new DesiredCapabilities();
-                    if (PropConfig.get().getDeviceName() != null && PropConfig.get().getUuid() != null & PropConfig.get().getPlantfromVersion() != null) {
+                    if (PropConfig.get().getDeviceName() != null && PropConfig.get().getUuid() != null & PropConfig.get().getPlatFormVersion() != null) {
                         capabilities.setCapability("deviceName", PropConfig.get().getDeviceName());
                         capabilities.setCapability("udid", PropConfig.get().getUuid());
-                        capabilities.setCapability("plantfromVersion", PropConfig.get().getPlantfromVersion());
+                        capabilities.setCapability("platFormName", PropConfig.get().getPlatFormVersion());
                     } else {
                         IDevice device = DebugBridge.getDevice();
                         if (device != null) {
                             capabilities.setCapability("deviceName", device.getSerialNumber());
                         }
                     }
-                    capabilities.setCapability("platfromName", "ios");
+                    capabilities.setCapability("platFormName", "ios");
                     capabilities.setCapability("unicodeKeyboard", true);
                     capabilities.setCapability("resetKeyboard", true);
                     capabilities.setCapability("nativeWebTap", true);

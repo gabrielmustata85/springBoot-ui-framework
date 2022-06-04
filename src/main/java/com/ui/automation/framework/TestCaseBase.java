@@ -31,9 +31,9 @@ import static com.ui.automation.framework.Inject.AutoInjectHelper.initFields;
 @Listeners({TestResultListener.class, SuiteListener.class, PowerEmailableReporter.class, HTMLReporter.class})
 @Slf4j
 public abstract class TestCaseBase extends AbstractTestNGSpringContextTests {
+
     private String browser = null;
     private String hubURL = null;
-
 
     /**
      * Before suite.

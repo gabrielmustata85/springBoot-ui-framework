@@ -1,14 +1,15 @@
 package com.ui.automation.framework.testng.listener;
 
-import com.library.common.IOHelper;
 import com.thoughtworks.qdox.JavaDocBuilder;
 import com.thoughtworks.qdox.model.DocletTag;
 import com.thoughtworks.qdox.model.JavaClass;
 import com.thoughtworks.qdox.model.JavaMethod;
 import com.ui.automation.framework.config.PropConfig;
+import com.ui.automation.framework.helpers.IOHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.*;
 import org.testng.collections.Lists;
+
 import org.testng.internal.Utils;
 import org.testng.xml.XmlSuite;
 
@@ -346,7 +347,7 @@ public class PowerEmailableReporter implements IReporter {
      */
     protected void generateExceptionReport(Throwable exception, ITestNGMethod method) {
         m_out.print("<div class=\"stacktrace\">");
-        m_out.print(Utils.stackTrace(exception, true)[0]);
+        m_out.print(Utils.shortStackTrace(exception, true));
         m_out.println("</div>");
     }
 
