@@ -7,7 +7,7 @@ public class TestCaseData {
     @DataProvider(name = "searchData")
     public static Object[][] searchData() {
         return new Object[][]{
-                {"测试"}
+                {"Spring Boot"}
         };
     }
 }

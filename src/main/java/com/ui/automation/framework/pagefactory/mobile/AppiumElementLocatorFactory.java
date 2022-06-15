@@ -41,7 +41,7 @@ class AppiumElementLocatorFactory implements CacheableElementLocatorFactory {
      * Instantiates a new Appium element locator factory.
      *
      * @param searchContext     the search context
-     * @param timeOutDuration   the time out duration
+     * @param timeOutDuration   the timeout duration
      * @param originalWebDriver the original web driver
      * @param builder           the builder
      */

@@ -15,9 +15,6 @@ import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Java字节码的操纵之动态编译
- */
 public class DynamicCompileHelper {
     private final static Logger logger = Logger.getLogger(DynamicCompileHelper.class);
     /**

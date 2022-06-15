@@ -12,7 +12,6 @@ import java.util.Map;
  */
 public class CollectionHelper {
     /**
-     * 判断 Collection 是否为空
      *
      * @param collection the collection
      * @return the boolean
@@ -22,7 +21,6 @@ public class CollectionHelper {
     }
 
     /**
-     * 判断 Collection 是否非空
      *
      * @param collection the collection
      * @return the boolean
@@ -32,7 +30,6 @@ public class CollectionHelper {
     }
 
     /**
-     * 判断 Map 是否为空
      *
      * @param map the map
      * @return the boolean
@@ -42,7 +39,6 @@ public class CollectionHelper {
     }
 
     /**
-     * 判断 Map 是否非空
      *
      * @param map the map
      * @return the boolean

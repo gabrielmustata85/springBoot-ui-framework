@@ -100,7 +100,7 @@ public abstract class TestCaseBase extends AbstractTestNGSpringContextTests {
             } else {
                 driver = DriverConfig.getDriverObject();
             }
-            if(driver != null) {
+            if (driver != null) {
                 driver.manage().window().maximize();
                 DriverCache.set(driver);
             }

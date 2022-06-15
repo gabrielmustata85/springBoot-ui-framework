@@ -13,13 +13,13 @@ public class SearchWithServiceTest extends TestCaseBase {
     @Autowired
     SearchService searchService;
 
-    @Test(dataProviderClass = TestCaseData.class, dataProvider = "searchData", description = "搜索测试")
-    public void pageFactoryTest(String content) {
+    @Test(dataProviderClass = TestCaseData.class, dataProvider = "searchData", description = "Search Spring Boot")
+    public void googleSearch(String content) {
         searchService.search(content);
     }
 
-    @Test(dataProviderClass = TestCaseData.class, dataProvider = "searchData", description = "搜索测试")
-    public void pageFactoryTest2(String content) {
+    @Test(dataProviderClass = TestCaseData.class, dataProvider = "searchData", description = "Search Spring Boot 1")
+    public void googleSearch1(String content) {
         searchService.search(content);
     }
 }

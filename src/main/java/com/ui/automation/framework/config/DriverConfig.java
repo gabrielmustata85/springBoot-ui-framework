@@ -132,11 +132,11 @@ public class DriverConfig {
             switch (browserType) {
                 case FIREFOX:
                     if (osName.startsWith("Win") && osArch.contains("64")) {
-                        resource = new ClassPathResource("static"+File.separator+"geckodriver"+File.separator+"geckodriver_win64.exe");
+                        resource = new ClassPathResource("static" + File.separator + "geckodriver" + File.separator + "geckodriver_win64.exe");
                     } else if (osName.startsWith("Win") && !osArch.contains("64")) {
-                        resource = new ClassPathResource("static"+File.separator+"geckodriver"+File.separator+"geckodriver_win32.exe");
+                        resource = new ClassPathResource("static" + File.separator + "geckodriver" + File.separator + "geckodriver_win32.exe");
                     } else {
-                        resource = new ClassPathResource("static"+File.separator+"geckodriver"+File.separator+"geckodriver");
+                        resource = new ClassPathResource("static" + File.separator + "geckodriver" + File.separator + "geckodriver");
                     }
                     file = resource.getFile();
                     System.setProperty("webdriver.gecko.driver",
@@ -146,7 +146,7 @@ public class DriverConfig {
                     fp.setPreference("startup.homepage_welcome_url", "about:blank");
                     fp.setPreference("startup.homepage_welcome_url.additional", "about:blank");
                     if (PropConfig.get().isDebug()) {
-                        resource = new ClassPathResource("static"+File.separator+"firefoxextensions");
+                        resource = new ClassPathResource("static" + File.separator + "firefoxextensions");
                         List<String> xpiFiles = IOHelper.listFilesInDirectory(resource.getFile().getAbsolutePath(), "*.xpi");
                         for (String xpi : xpiFiles) {
                             fp.addExtension(new File(xpi));
@@ -157,9 +157,9 @@ public class DriverConfig {
                     break;
                 case IE:
                     if (osArch.contains("64")) {
-                        resource = new ClassPathResource("static"+File.separator+"iedriver"+File.separator+"64"+File.separator+"IEDriverServer.exe");
+                        resource = new ClassPathResource("static" + File.separator + "iedriver" + File.separator + "64" + File.separator + "IEDriverServer.exe");
                     } else {
-                        resource = new ClassPathResource("static"+File.separator+"iedriver"+File.separator+"32"+File.separator+"IEDriverServer.exe");
+                        resource = new ClassPathResource("static" + File.separator + "iedriver" + File.separator + "32" + File.separator + "IEDriverServer.exe");
                     }
                     file = resource.getFile();
                     System.setProperty("webdriver.ie.driver",
@@ -173,9 +173,9 @@ public class DriverConfig {
                     break;
                 case GOOGLECHROME:
                     if (osName.startsWith("Win")) {
-                        resource = new ClassPathResource("static"+File.separator+"chromedriver"+File.separator+"chromedriver_for_win.exe");
+                        resource = new ClassPathResource("static" + File.separator + "chromedriver" + File.separator + "chromedriver_for_win.exe");
                     } else {
-                        resource = new ClassPathResource(File.separator+"chromedriver");
+                        resource = new ClassPathResource(File.separator + "chromedriver");
                     }
                     file = resource.getFile();
                     System.setProperty("webdriver.chrome.driver",
@@ -186,7 +186,7 @@ public class DriverConfig {
                     capabilities.setCapability(CapabilityType.LOGGING_PREFS, loggingprefs);
                     if (PropConfig.get().isDebug()) {
                         ChromeOptions options = new ChromeOptions();
-                        resource = new ClassPathResource("static"+File.separator+"chromextensions");
+                        resource = new ClassPathResource("static" + File.separator + "chromextensions");
                         List<String> crxFiles = IOHelper.listFilesInDirectory(resource.getFile().getAbsolutePath(), "*.crx");
                         for (String crx : crxFiles) {
                             options.addExtensions(new File(crx));
@@ -279,7 +279,7 @@ public class DriverConfig {
 
     private static File getAppBin() throws IOException {
         File app = null;
-        Resource resource = new ClassPathResource("static"+File.separator);
+        Resource resource = new ClassPathResource("static" + File.separator);
         String resourcePath = resource.getFile().getAbsolutePath();
         if (PropConfig.get().getAppBin().contains("http") && !isDownloaded)
             if (PropConfig.get().getAppBin().endsWith("apk") || PropConfig.get().getAppBin().endsWith("ipa") || PropConfig.get().getAppBin().endsWith("app")) {

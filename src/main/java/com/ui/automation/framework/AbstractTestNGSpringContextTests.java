@@ -67,8 +67,7 @@ import java.lang.reflect.Method;
  * <li>{@link DirtiesContextTestExecutionListener}
  * </ul>
  *
- * @author Sam Brannen
- * @author Juergen Hoeller
+
  * @see ContextConfiguration
  * @see TestContext
  * @see TestContextManager

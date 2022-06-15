@@ -24,7 +24,6 @@ public class ClassHelper {
     }
 
     /**
-     * 获取类加载器
      *
      * @return the class loader
      */
@@ -33,7 +32,6 @@ public class ClassHelper {
     }
 
     /**
-     * 获取类路径
      *
      * @return the class path
      */
@@ -47,7 +45,6 @@ public class ClassHelper {
     }
 
     /**
-     * 加载类（将自动初始化）
      *
      * @param className the class name
      * @return the class
@@ -57,7 +54,6 @@ public class ClassHelper {
     }
 
     /**
-     * 加载类
      *
      * @param className     the class name
      * @param isInitialized the is initialized
@@ -75,7 +71,6 @@ public class ClassHelper {
     }
 
     /**
-     * 是否为 int 类型（包括 Integer 类型）
      *
      * @param type the type
      * @return the boolean
@@ -84,8 +79,7 @@ public class ClassHelper {
         return type.equals(int.class) || type.equals(Integer.class);
     }
 
-    /**
-     * 是否为 long 类型（包括 Long 类型）
+    /**）
      *
      * @param type the type
      * @return the boolean
@@ -95,7 +89,6 @@ public class ClassHelper {
     }
 
     /**
-     * 是否为 double 类型（包括 Double 类型）
      *
      * @param type the type
      * @return the boolean
@@ -105,7 +98,6 @@ public class ClassHelper {
     }
 
     /**
-     * 是否为 String 类型
      *
      * @param type the type
      * @return the boolean

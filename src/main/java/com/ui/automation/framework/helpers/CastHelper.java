@@ -1,11 +1,7 @@
 package com.ui.automation.framework.helpers;
 
-/**
- * Created by kcgw001 on 2016/3/31.
- */
 public class CastHelper {
     /**
-     * 转为 String 型
      *
      * @param obj the obj
      * @return the string
@@ -15,7 +11,6 @@ public class CastHelper {
     }
 
     /**
-     * 转为 String 型（提供默认值）
      *
      * @param obj          the obj
      * @param defaultValue the default value
@@ -26,7 +21,6 @@ public class CastHelper {
     }
 
     /**
-     * 转为 double 型
      *
      * @param obj the obj
      * @return the double
@@ -36,7 +30,6 @@ public class CastHelper {
     }
 
     /**
-     * 转为 double 型（提供默认值）
      *
      * @param obj          the obj
      * @param defaultValue the default value
@@ -58,7 +51,6 @@ public class CastHelper {
     }
 
     /**
-     * 转为 long 型
      *
      * @param obj the obj
      * @return the long
@@ -68,7 +60,6 @@ public class CastHelper {
     }
 
     /**
-     * 转为 long 型（提供默认值）
      *
      * @param obj          the obj
      * @param defaultValue the default value
@@ -90,7 +81,6 @@ public class CastHelper {
     }
 
     /**
-     * 转为 int 型
      *
      * @param obj the obj
      * @return the int
@@ -100,7 +90,6 @@ public class CastHelper {
     }
 
     /**
-     * 转为 int 型（提供默认值）
      *
      * @param obj          the obj
      * @param defaultValue the default value
@@ -122,7 +111,6 @@ public class CastHelper {
     }
 
     /**
-     * 转为 boolean 型
      *
      * @param obj the obj
      * @return the boolean
@@ -132,7 +120,6 @@ public class CastHelper {
     }
 
     /**
-     * 转为 boolean 型（提供默认值）
      *
      * @param obj          the obj
      * @param defaultValue the default value

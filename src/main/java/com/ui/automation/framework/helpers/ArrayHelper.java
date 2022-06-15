@@ -9,7 +9,6 @@ import org.apache.commons.lang3.ArrayUtils;
 public class ArrayHelper {
 
     /**
-     * 判断数组是否非空
      *
      * @param array the array
      * @return the boolean
@@ -19,7 +18,6 @@ public class ArrayHelper {
     }
 
     /**
-     * 判断数组是否为空
      *
      * @param array the array
      * @return the boolean
@@ -29,7 +27,6 @@ public class ArrayHelper {
     }
 
     /**
-     * 连接数组
      *
      * @param array1 the array 1
      * @param array2 the array 2
@@ -40,7 +37,6 @@ public class ArrayHelper {
     }
 
     /**
-     * 判断对象是否在数组中
      *
      * @param <T>   the type parameter
      * @param array the array

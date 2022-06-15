@@ -14,10 +14,10 @@ public class SearchPage{
     @Value("${webPath}")
     private String url;
 
-    @FindBy(id = "kw")
+    @FindBy(xpath = "//input[@id='search_product']")
     private WebElement searchTestBox;
 
-    @FindBy(id = "su")
+    @FindBy(xpath = "//button[@id='submit_search']")
     private WebElement searchBtn;
 
     public void searchFor(String text) {

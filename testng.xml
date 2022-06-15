@@ -6,7 +6,7 @@
     <test verbose="2" preserve-order="true" name="All Tests">
 
         <parameter name="browser" value="chrome"></parameter>
-        <parameter name="browserType" value="chrome"></parameter>
+<!--        <parameter name="browserType" value="chrome"></parameter>-->
         <classes>
 
             <class name="com.ui.automation.tests.SearchWithServiceTest"/>
