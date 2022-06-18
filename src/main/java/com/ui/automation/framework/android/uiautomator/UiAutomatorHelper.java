@@ -31,6 +31,7 @@ public class UiAutomatorHelper {
     private static final String UIDUMP_DEVICE_PATH = "/data/local/tmp/uidump.xml";  //$NON-NLS-1$
     private static final int XML_CAPTURE_TIMEOUT_SEC = 40;
     private static IDevice device = null;
+
     static {
         DebugBridge.init();
         try {
@@ -55,8 +56,8 @@ public class UiAutomatorHelper {
 
             log.info("start screenshot");
             BufferedImage bufferedImage = UiAutomatorHelper.takeSnapshot();
-            File outputfile = new File("test.png");
-            ImageIO.write(bufferedImage, "png", outputfile);
+            File outPutFile = new File("test.png");
+            ImageIO.write(bufferedImage, "png", outPutFile);
             log.info("end screenshot");
 
         } catch (Exception e) {

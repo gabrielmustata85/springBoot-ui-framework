@@ -18,8 +18,4 @@ public class SearchWithServiceTest extends TestCaseBase {
         searchService.search(content);
     }
 
-    @Test(dataProviderClass = TestCaseData.class, dataProvider = "searchData", description = "Search Spring Boot 1")
-    public void googleSearch1(String content) {
-        searchService.search(content);
-    }
 }

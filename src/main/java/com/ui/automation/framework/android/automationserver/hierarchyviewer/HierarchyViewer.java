@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 @Slf4j
 public class HierarchyViewer {
-    private static final String TAG = "hierarchyviewer";
+    private static final String TAG = "hierarchies";
     private IDevice device = null;
 
 
@@ -63,7 +63,6 @@ public class HierarchyViewer {
         }
         return null;
     }
-
 
     /**
      * Gets element location by text.

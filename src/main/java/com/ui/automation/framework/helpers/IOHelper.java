@@ -3,6 +3,7 @@ package com.ui.automation.framework.helpers;
 import org.apache.commons.io.*;
 import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 import java.io.File;
@@ -27,6 +28,7 @@ public class IOHelper {
      */
     public static void main(String[] args)
             throws Exception {
+        BasicConfigurator.configure();
         logger.info(getSourceFromUrl("http://192.168.2.228/build/Biz_English/Android/16-03-29-09-14/"));
     }
 
@@ -49,7 +51,7 @@ public class IOHelper {
      *
      * @param strSourcePath the str source path
      * @param strDirPath    the str dir path
-     * @return boolean boolean
+     * @return boolean
      */
     public static boolean contentEquals(String strSourcePath, String strDirPath) {
         File Source = new File(strSourcePath);

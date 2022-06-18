@@ -33,7 +33,7 @@ public class DeviceBridge {
     /**
      * The constant TAG.
      */
-    public static final String TAG = "hierarchyviewer";
+    public static final String TAG = "hierarchies";
 
     private static final int DEFAULT_SERVER_PORT = 4939;
 

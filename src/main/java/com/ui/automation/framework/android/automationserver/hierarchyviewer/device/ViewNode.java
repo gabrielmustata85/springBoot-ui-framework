@@ -24,9 +24,9 @@ import java.util.*;
 public class ViewNode {
 
     /**
-     * The constant MISCELLANIOUS.
+     * The constant MISCELLANEOUS.
      */
-    public static final String MISCELLANIOUS = "miscellaneous";
+    public static final String MISCELLANEOUS = "miscellaneous";
 
     ;
     private static final double RED_THRESHOLD = 0.8;
@@ -310,7 +310,7 @@ public class ViewNode {
             }
         }
         if (categories.size() != 0) {
-            categories.add(MISCELLANIOUS);
+            categories.add(MISCELLANEOUS);
         }
     }
 
@@ -323,14 +323,12 @@ public class ViewNode {
             double totalMeasure = 0;
             double totalLayout = 0;
             double totalDraw = 0;
-            for (int i = 0; i < N; i++) {
-                ViewNode child = children.get(i);
+            for (ViewNode child : children) {
                 totalMeasure += child.measureTime;
                 totalLayout += child.layoutTime;
                 totalDraw += child.drawTime;
             }
-            for (int i = 0; i < N; i++) {
-                ViewNode child = children.get(i);
+            for (ViewNode child : children) {
                 if (child.measureTime / totalMeasure >= RED_THRESHOLD) {
                     child.measureRating = ProfileRating.RED;
                 } else if (child.measureTime / totalMeasure >= YELLOW_THRESHOLD) {
@@ -354,8 +352,8 @@ public class ViewNode {
                 }
             }
         }
-        for (int i = 0; i < N; i++) {
-            children.get(i).setProfileRatings();
+        for (ViewNode child : children) {
+            child.setProfileRatings();
         }
     }
 
@@ -365,8 +363,7 @@ public class ViewNode {
     public void setViewCount() {
         viewCount = 1;
         final int N = children.size();
-        for (int i = 0; i < N; i++) {
-            ViewNode child = children.get(i);
+        for (ViewNode child : children) {
             child.setViewCount();
             viewCount += child.viewCount;
         }
@@ -385,8 +382,8 @@ public class ViewNode {
                         && (shortName.toLowerCase().contains(text.toLowerCase()) || (!id
                         .equals("NO_ID") && id.toLowerCase().contains(text.toLowerCase())));
         final int N = children.size();
-        for (int i = 0; i < N; i++) {
-            children.get(i).filter(text);
+        for (ViewNode child : children) {
+            child.filter(text);
         }
     }
 

@@ -12,7 +12,6 @@ import java.util.List;
  */
 public class TestngRun {
 
-
     /**
      * run testng suite xml
      *

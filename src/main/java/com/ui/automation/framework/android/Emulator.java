@@ -170,7 +170,7 @@ public class Emulator {
         try {
             log.info("Beginning Close emulator.");
             ProcessHelper.closePidsByName(this.emulatorProcessName);
-            log.info("close all emulators scucessfully.");
+            log.info("Close all emulators successfully.");
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }

@@ -22,27 +22,27 @@ public class DynamicCompileHelper {
      */
     private String source;
     /**
-     * 类名称
+     * Source code
      */
     private String className;
     /**
-     * 编译输出路径
+     * Extract outputPath
      */
     private String outPath = ".";
     /**
-     * 提取包名称
+     * Extract the name of the packege
      */
     private Pattern packPattern = Pattern.compile("^package\\s+([a-z0-9.]+);");
     /**
-     * 提取类名称
+     * Extract the name of the class
      */
     private Pattern classNamePattern = Pattern.compile("class\\s+([^{]+)");
 
     /**
      * Constructor
      *
-     * @param source  源代码
-     * @param outPath 动态编译文件的输出路径
+     * @param source  source code
+     * @param outPath outputPath
      */
     public DynamicCompileHelper(String source, String outPath) {
         this.outPath = outPath;
@@ -89,10 +89,10 @@ public class DynamicCompileHelper {
     }
 
     /**
-     * 测试入口
+     * Test entrance
      *
-     * @param args 参数列表
-     * @throws Exception 抛出异常
+     * @param args parameter list
+     * @throws Exception throw exception
      */
     public static void main(String[] args) throws Exception {
         String stringToEval = "(4+3)*8/2";
@@ -111,20 +111,20 @@ public class DynamicCompileHelper {
     }
 
     /**
-     * 编译
+     * compile
      *
-     * @return 编译结果 true/false
-     * @throws Exception 抛出异常信息
+     * @return compile result true/false
+     * @throws Exception
      */
     private boolean doCompile() throws Exception {
         return new InnerCompiler(new URI(className), Kind.SOURCE, this.source).compile();
     }
 
     /**
-     * 调用
+     * transfer
      *
-     * @param methodName 方法名称
-     * @return result 调用结果
+     * @param methodName method name
+     * @return result
      */
     @SuppressWarnings("unchecked")
     public Object doInvoke(String methodName) {
@@ -141,11 +141,11 @@ public class DynamicCompileHelper {
     }
 
     /**
-     * 自动调用
+     * automate call
      *
-     * @param methodName 方法名称
-     * @return resultObj 调用结果
-     * @throws Exception 忽略所有异常（建议调整）
+     * @param methodName
+     * @return resultObj
+     * @throws Exception
      */
     public Object Invoke(String methodName) throws Exception {
         if (this.doCompile()) {
@@ -155,7 +155,7 @@ public class DynamicCompileHelper {
     }
 
     /**
-     * 设定参与编译的源代码
+     * set source code
      *
      * @param source compiled source
      */
@@ -166,10 +166,10 @@ public class DynamicCompileHelper {
     }
 
     /**
-     * 解析类名称
+     * analyse Class name
      *
-     * @param source 源字符串
-     * @return className 类名称/空字符串
+     * @param source
+     * @return className
      */
     private String analyseClassName(String source) {
         String tmpName = "";
@@ -185,18 +185,18 @@ public class DynamicCompileHelper {
     }
 
     /**
-     * 指定类名称
+     * set Class name
      *
-     * @param className 类名称
+     * @param className
      */
     public void setClassName(String className) {
         this.className = className;
     }
 
     /**
-     * 设定输出路径
+     * set Output path
      *
-     * @param outPath 输出路径
+     * @param outPath
      */
     public void setOutPath(String outPath) {
         this.outPath = outPath;
@@ -215,12 +215,6 @@ public class DynamicCompileHelper {
                 "]";
     }
 
-    /**
-     * 负责自动编译
-     *
-     * @author WangYanCheng
-     * @version 2011 -2-17
-     */
     class InnerCompiler extends SimpleJavaFileObject {
         /**
          * content
@@ -228,7 +222,7 @@ public class DynamicCompileHelper {
         private String content;
 
         /**
-         * Contructor
+         * Constructor
          *
          * @param uri     uri
          * @param kind    kind
@@ -242,8 +236,8 @@ public class DynamicCompileHelper {
         /**
          * Constructor
          *
-         * @param uri  编译源文件路径
-         * @param kind 文件类型
+         * @param uri
+         * @param kind
          */
         protected InnerCompiler(URI uri, Kind kind) {
             super(uri, kind);
@@ -259,9 +253,9 @@ public class DynamicCompileHelper {
         }
 
         /**
-         * 编译
+         * compile
          *
-         * @return result 成功编译标记{true|false}
+         * @return result {true|false}
          */
         public boolean compile() {
             boolean result = false;

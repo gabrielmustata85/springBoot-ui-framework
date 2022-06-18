@@ -1,6 +1,7 @@
 package com.ui.automation.framework.helpers;
 
 
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 /**
@@ -16,9 +17,10 @@ public class OSHelper {
      * @param args the input arguments
      */
     public static void main(String[] args) {
-        logger.info(isWindows());
-        logger.info(isMac());
-        logger.info(isUnix());
+        BasicConfigurator.configure();
+        logger.info("OS is Win: " + isWindows());
+        logger.info("OS is Mac: " + isMac());
+        logger.info("OS is Unix: " + isUnix());
     }
 
     /**

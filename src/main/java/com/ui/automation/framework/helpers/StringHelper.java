@@ -90,7 +90,7 @@ public class StringHelper {
      * Check if the string is a number or not
      *
      * @param str String to be checked
-     * @return boolean boolean
+     * @return boolean
      */
     public static boolean isNumber(String str) {
 
@@ -108,7 +108,7 @@ public class StringHelper {
      * Check if the string is letter or not
      *
      * @param str String to be checked
-     * @return boolean boolean
+     * @return boolean
      */
     public static boolean isLetter(String str) {
         return str.matches("^[A-Za-z]+$");
@@ -294,7 +294,7 @@ public class StringHelper {
 
     /**
      * Trim <i>all</i> whitespace from the given String: leading, trailing, and
-     * inbetween characters.
+     * between characters.
      *
      * @param str the String to check
      * @return the trimmed String

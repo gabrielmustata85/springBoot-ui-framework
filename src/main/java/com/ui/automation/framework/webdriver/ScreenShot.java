@@ -204,7 +204,7 @@ public class ScreenShot {
         public void take(String path) {
             injectJQueryIfNeeded();
             customAction();
-            //将滚动条移动到顶端
+
             js.executeScript("scrollTo(0,0)");
             int totalHeight = 0;
             int totalWidth = 0;

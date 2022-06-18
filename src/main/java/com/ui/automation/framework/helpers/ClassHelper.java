@@ -1,5 +1,6 @@
 package com.ui.automation.framework.helpers;
 
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 import java.net.URL;
@@ -19,6 +20,7 @@ public class ClassHelper {
      * @param args the input arguments
      */
     public static void main(String[] args) {
+        BasicConfigurator.configure();
         logger.info(getClassLoader().toString());
         logger.info(getClassPath());
     }
@@ -64,7 +66,7 @@ public class ClassHelper {
         try {
             cls = Class.forName(className, isInitialized, getClassLoader());
         } catch (ClassNotFoundException e) {
-            logger.error("加载类出错！", e);
+            logger.error("Class error！", e);
             throw new RuntimeException(e);
         }
         return cls;

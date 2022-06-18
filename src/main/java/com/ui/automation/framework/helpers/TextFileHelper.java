@@ -10,16 +10,12 @@ import java.util.Arrays;
  * Static functions for reading and writing text files as a single string, and
  * treating a file as an ArrayList.
  *
- * @author a106403
  */
 public class TextFileHelper extends ArrayList<String> {
 
     private final static Logger logger = Logger
             .getLogger(TextFileHelper.class);
 
-    /**
-     *
-     */
     private static final long serialVersionUID = 1L;
 
     /**

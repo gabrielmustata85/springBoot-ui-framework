@@ -9,9 +9,6 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.*;
 
-/**
- * Created by kcgw001 on 2016/3/29.
- */
 public class ProcessHelper {
     /**
      * The constant okResult.
@@ -117,7 +114,7 @@ public class ProcessHelper {
         StackTraceElement[] ste = Thread.currentThread().getStackTrace();
         String currentMethod = ste[1].getMethodName();
         String invokeMethod = ste[2].getMethodName().equals(currentMethod) ? ste[3].getMethodName() : ste[2].getMethodName();
-        logger.info("[" + invokeMethod + "]" + "Begining getStreamResult");
+        logger.info("[" + invokeMethod + "]" + "Beginning getStreamResult");
         String timeOutEexception = "";
         ExecutorService exec = Executors.newCachedThreadPool();
         InputStream okStream = process.getInputStream();

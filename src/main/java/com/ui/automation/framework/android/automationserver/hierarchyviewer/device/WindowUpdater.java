@@ -134,8 +134,8 @@ public class WindowUpdater {
     public static void notifyFocusChanged(IDevice device) {
         IWindowChangeListener[] listeners = getWindowChangeListenersAsArray(device);
         if (listeners != null) {
-            for (int i = 0; i < listeners.length; i++) {
-                listeners[i].focusChanged(device);
+            for (IWindowChangeListener listener : listeners) {
+                listener.focusChanged(device);
             }
         }
     }

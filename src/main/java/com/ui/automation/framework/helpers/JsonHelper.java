@@ -44,7 +44,7 @@ public class JsonHelper {
     }
 
     /**
-     * 简单判断是否是json格式的字符串
+     * verify if is json
      *
      * @param str the str
      * @return the boolean
@@ -52,8 +52,6 @@ public class JsonHelper {
     private static boolean isJson(String str) {
         return str.startsWith("{") && str.contains(":") && str.endsWith("}") || str.startsWith("[") && str.endsWith("]");
     }
-
-    ;
 
     private static void recursionGetFields(JsonNode node, Map<String, String> pairMap, ObjectMapper mapper, String parentKey) {
         Iterator<Map.Entry<String, JsonNode>> fieldsIterator = node.fields();

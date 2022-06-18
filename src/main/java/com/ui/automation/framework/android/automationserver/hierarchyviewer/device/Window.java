@@ -100,8 +100,8 @@ public class Window {
 
     /*
      * After each refresh of the windows in the device selector, the windows are
-     * different instances and automatically reselecting the same window doesn't
-     * work in the device selector unless the equals method is defined here.
+     * different instances and automatically re-selecting the same window doesn't
+     * work in the device selector unless the 'equals' method is defined here.
      */
     @Override
     public boolean equals(Object other) {

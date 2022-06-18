@@ -15,7 +15,6 @@ import java.util.List;
 public class ReflectHelper {
     private final static Logger logger = Logger.getLogger(ReflectHelper.class);
 
-
     /**
      * Sets method.
      *
@@ -333,7 +332,7 @@ public class ReflectHelper {
     }
 
     /**
-     * 通过反射创建实例
+     * New instance
      *
      * @param <T>       the type parameter
      * @param className the class name
@@ -352,7 +351,7 @@ public class ReflectHelper {
     }
 
     /**
-     * 通过反射创建实例
+     * New instance
      *
      * @param <T>          the type parameter
      * @param commandClass the class
