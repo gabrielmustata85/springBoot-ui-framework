@@ -71,7 +71,7 @@ public abstract class TestCaseBase extends AbstractTestNGSpringContextTests {
         log.info("afterSuite");
         afterSuite();
         if (PropConfig.get().getCoreType().equalsIgnoreCase("ANDROIDAPP")) {
-            //AccessibilityEventMonitor.stop();
+            AccessibilityEventMonitor.stop();
             DebugBridge.terminate();
         }
     }

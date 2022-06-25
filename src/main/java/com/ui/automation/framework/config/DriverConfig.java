@@ -8,7 +8,9 @@ import com.ui.automation.framework.helpers.IOHelper;
 import com.ui.automation.framework.helpers.StringHelper;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.slf4j.Slf4j;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -113,7 +115,7 @@ public class DriverConfig {
 
     /**
      * Create and get the corresponding driver object based upon the selected
-     * browserType Initialized in construct.
+     * browserType Initialized in constructor.
      *
      * @param browserType the browser type
      * @return WebDriver driver object
@@ -129,6 +131,7 @@ public class DriverConfig {
             Properties sysProp = System.getProperties();
             String osName = sysProp.getProperty("os.name");
             String osArch = sysProp.getProperty("os.arch");
+
             switch (browserType) {
                 case FIREFOX:
                     if (osName.startsWith("Win") && osArch.contains("64")) {
@@ -172,28 +175,8 @@ public class DriverConfig {
                     log.info("Using INTERNET EXPLORER Driver...");
                     break;
                 case GOOGLECHROME:
-                    if (osName.startsWith("Win")) {
-                        resource = new ClassPathResource("static" + File.separator + "chromedriver" + File.separator + "chromedriver_for_win.exe");
-                    } else {
-                        resource = new ClassPathResource(File.separator + "chromedriver");
-                    }
-                    file = resource.getFile();
-                    System.setProperty("webdriver.chrome.driver",
-                            file.getAbsolutePath());
-                    capabilities = DesiredCapabilities.chrome();
-                    LoggingPreferences loggingprefs = new LoggingPreferences();
-                    loggingprefs.enable(LogType.BROWSER, Level.ALL);
-                    capabilities.setCapability(CapabilityType.LOGGING_PREFS, loggingprefs);
-                    if (PropConfig.get().isDebug()) {
-                        ChromeOptions options = new ChromeOptions();
-                        resource = new ClassPathResource("static" + File.separator + "chromextensions");
-                        List<String> crxFiles = IOHelper.listFilesInDirectory(resource.getFile().getAbsolutePath(), "*.crx");
-                        for (String crx : crxFiles) {
-                            options.addExtensions(new File(crx));
-                        }
-                        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-                    }
-                    driverObject = ThreadGuard.protect(new ChromeDriver(capabilities));
+                    WebDriverManager.chromedriver().setup();
+                    driverObject = ThreadGuard.protect(new ChromeDriver());
                     log.info("Using CHROME Driver...");
                     break;
                 case HTMLUNIT:
