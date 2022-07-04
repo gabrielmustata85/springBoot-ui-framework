@@ -3,14 +3,17 @@
 
 <suite name="All Test Suite">
 
+    <listeners>
+        <listener class-name="com.ui.automation.framework.testng.listener.ITestListener"></listener>
+        <listener class-name="com.ui.automation.framework.testng.listener.RetryListener"></listener>
+    </listeners>
+
     <test verbose="2" preserve-order="true" name="All Tests">
 
         <parameter name="browser" value="chrome"></parameter>
 <!--        <parameter name="browserType" value="chrome"></parameter>-->
         <classes>
-
             <class name="com.ui.automation.tests.SearchWithServiceTest"/>
-
         </classes>
     </test>
 

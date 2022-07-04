@@ -12,30 +12,30 @@ public interface ICustomTestListener {
     /**
      * On test failure.
      *
-     * @param tr the tr
+     * @param iTestResult the iTestResult
      */
-    void onTestFailure(ITestResult tr);
+    void onTestFailure(ITestResult iTestResult);
 
     /**
      * On test skipped.
      *
-     * @param tr the tr
+     * @param iTestResult the iTestResult
      */
-    void onTestSkipped(ITestResult tr);
+    void onTestSkipped(ITestResult iTestResult);
 
     /**
      * On test success.
      *
-     * @param tr the tr
+     * @param iTestResult the iTestResult
      */
-    void onTestSuccess(ITestResult tr);
+    void onTestSuccess(ITestResult iTestResult);
 
     /**
      * On test start.
      *
-     * @param tr the tr
+     * @param iTestResult the iTestResult
      */
-    void onTestStart(ITestResult tr);
+    void onTestStart(ITestResult iTestResult);
 
     /**
      * On start.

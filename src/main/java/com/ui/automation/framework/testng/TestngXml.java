@@ -32,7 +32,7 @@ public class TestngXml {
         if (args.length > 1) {
             autoGenerate(args[0], Integer.parseInt(args[1]));
         } else {
-            autoGenerate(Integer.parseInt(args[0]));
+            autoGenerate(Integer.parseInt(args[1]));
         }
     }
 
