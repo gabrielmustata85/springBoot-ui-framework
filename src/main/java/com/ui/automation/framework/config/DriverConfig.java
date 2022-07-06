@@ -176,7 +176,7 @@ public class DriverConfig {
                     break;
                 case GOOGLECHROME:
                     WebDriverManager.chromedriver().setup();
-                    driverObject = ThreadGuard.protect(new ChromeDriver(OptionsConfig.getChromeOptions()));
+                    driverObject = ThreadGuard.protect(new ChromeDriver());
                     log.info("Using CHROME Driver...");
                     break;
                 case HTMLUNIT:

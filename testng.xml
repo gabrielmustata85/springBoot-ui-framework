@@ -4,7 +4,7 @@
 <suite name="All Test Suite">
 
     <listeners>
-        <listener class-name="com.ui.automation.framework.testng.listener.ITestListener"></listener>
+<!--        <listener class-name="com.ui.automation.framework.testng.listener.ITestListener"></listener>-->
         <listener class-name="com.ui.automation.framework.testng.listener.RetryListener"></listener>
     </listeners>
 
